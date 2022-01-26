@@ -9,7 +9,6 @@ html {
 	font-size:62.5%;
 }
 body {
-	text-align: center;
 	font-family: Calibri, serif;
 	background: lightblue;
 }
@@ -20,7 +19,7 @@ header, footer {
 }
 footer {
 	position: absolute;
-	top: 750px;
+	bottom: -4rem;
 	width: 100%;
 }
 ul {
@@ -43,4 +42,8 @@ section, form {
 }
 section h1 {
 	margin: 8px;
+}
+
+.container {
+	margin: 5rem;
 }
