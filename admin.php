@@ -1,9 +1,14 @@
 <?php
 $title = "Admin space";
 require 'parts/header.php';
-$file = fopen('../data/last_message.json', 'rb');
-echo "Le dernier message envoyer est: <br>";
-echo fgets($file);
+$file = fopen('../data/last_message.json', 'rb');?>
+<div class="container">
+    <div class="basicContainer autoWidth">
+        <h3>Le dernier message envoyer est: </h3>
+        <p id="lastMessage"><?=fgets($file)?></p>
+    </div>
+</div>
+<?php
 
 fclose($file);
 

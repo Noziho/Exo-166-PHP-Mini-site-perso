@@ -9,8 +9,9 @@
     <body>
         <header>
             <ul>
+                <li><a href="/?p=home">Home Page</a></li>
                 <li><a href="/?p=bio">Bio</a></li>
                 <li><a href="/?p=contact">Contact</a></li>
-                <li><a href="/?p=home">Home Page</a></li>
+
             </ul>
         </header>
