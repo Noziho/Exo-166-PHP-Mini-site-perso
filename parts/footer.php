@@ -1,7 +1,7 @@
 <footer>
-
+Mon footer
 </footer>
 
-<script src="../public/app.js"></script>
+<script src="../public/assets/js/app.js"></script>
 </body>
 </html>

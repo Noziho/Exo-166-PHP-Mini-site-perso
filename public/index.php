@@ -1,19 +1,11 @@
 <?php
 
-/* on affiche  les erreurs, si vous avez une erreur 500, regardez dans votre console */
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
-/* nous verrons plus tard comment se passer de ces 3 lignes */
+$page = $_GET['p'] ?? 'home';
+$page = strip_tags($page);
 
+checkPageExist(sprintf(__DIR__ . '/../%s.php', strtolower($page)));
 
-// on inclue le fichier qui contient nos fonctions
-require __DIR__ . '/../lib/functions.php';
-
-// l'exemple avec le header, à vous de jouer pour le reste
-getPart('header');
-getContent();
-
-
-getUserData();
+function checkPageExist(string$pageName) {
+    require file_exists($pageName) ? $pageName : __DIR__ . '/../404.php';
+}
 
