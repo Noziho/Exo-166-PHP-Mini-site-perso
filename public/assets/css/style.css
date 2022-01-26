@@ -124,3 +124,30 @@ footer {
 .error {
 	background: indianred;
 }
+
+@media screen and (max-width: 800px) {
+	.basicContainer {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	#id-message {
+		width: 100%;
+	}
+}
+@media screen and (max-width: 550px) {
+	.sendButton {
+		width: auto;
+	}
+
+	#lastMessage {
+		width: auto;
+	}
+}
+
+@media screen and (max-width: 450px) {
+	ul,li {
+		margin-inline: 1rem;
+	}
+}
