@@ -19,3 +19,7 @@ function getUserData () :void {
 
     }
 }
+
+function checkRange () {
+
+}
