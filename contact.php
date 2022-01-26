@@ -17,7 +17,7 @@ if (isset($_GET['f'])) {
 
 }?>
 
-    <h1>Contact</h1>
+    <h1 class="anime">Contact</h1>
 <div class="container">
     <div class="basicContainer">
         <form action="/?p=/form/formTreatment" method="post">

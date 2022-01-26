@@ -26,3 +26,8 @@ if (errorOrSucessMessage) {
         $('.error-message').slideUp('fast');
     },4000);
 }
+
+setTimeout(function () {
+    $('.anime').slideDown();
+})
+

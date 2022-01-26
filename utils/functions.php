@@ -6,15 +6,15 @@ function getUserData () :void {
     foreach ($dataArray as $key => $data) {
         if (is_array($data)) {
             foreach ($data as $arrayKey => $arrayData) {
-                echo "<br>"."Experiences: ".($arrayKey)."<br>";
+                echo "<br>"."Experiences: "."n°".($arrayKey+1).":"."<br>";
                 foreach ($arrayData as $keyExperience => $valueKeyExperience) {
-                    echo $keyExperience." => ".$valueKeyExperience."<br>";
+                    echo $keyExperience." : ".$valueKeyExperience."<br>";
                 }
             }
         }
         else {
             ?>
-            <div><?= $key .' => '. $data?></div><?php
+            <div><?= $key .': '. $data?></div><?php
         }
 
     }

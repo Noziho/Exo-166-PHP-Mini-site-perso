@@ -36,6 +36,7 @@ ul, li {
 
 h1 {
 	margin-left: 3rem;
+	display: none;
 }
 
 h2, h3 {
