@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 $page = $_GET['p'] ?? 'home';
 $page = strip_tags($page);
 

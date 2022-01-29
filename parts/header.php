@@ -12,6 +12,18 @@
                 <li><a href="/?p=home">Home Page</a></li>
                 <li><a href="/?p=bio">Bio</a></li>
                 <li><a href="/?p=contact">Contact</a></li>
+                <?php
+                if (!isset($_SESSION['logged'])) {?>
+                    <li><a href="/?p=login">Login</a></li><?php
+                }
+                else {?>
+                <li><a href="/?p=sessadmin">Gestion</a></li>
+                <li><a href="/?p=home&disL=1">Disconnect</a>
+                    <?php
+                }
+
+                ?>
+
 
             </ul>
         </header>
