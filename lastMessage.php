@@ -1,5 +1,5 @@
 <?php
-$title = "Admin space";
+$title = "Last send message";
 require 'parts/header.php';
 $file = fopen('../data/last_message.json', 'rb');?>
 <div class="container">

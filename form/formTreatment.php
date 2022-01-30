@@ -21,15 +21,33 @@ if (!$userMail) {
     exit();
 }
 
-header("Location: /?p=contact&f=5");
-
-
-
-
-
-
-
 $jsonMessage = file_put_contents("../data/last_message.json", $_POST['user_message']);
 json_encode($jsonMessage);
 
-header('Location: /?p=admin');
+$to = $_POST['user_mail'];
+$headers = [
+    'Reply-To' => 'noah.decroix3@gmail.com',
+    'X-Mailer' => 'PHP/' . phpversion(),
+    'Mime-version' => '1.0',
+    'Content-type' => 'text/html; charset=utf-8',
+];
+$message = '
+    <html lang="fr">
+    <head>
+        <title>Retour formulaire de contact</title>
+    </head>
+    <body>
+    <h1>Merci de nous avoir contacté, nous vous recontacterons bientôt</h1>
+        <div>
+            Pseudo: '.$username.'<br>
+            Message: '.$userMessage.'<br>
+        </div>
+    </body>
+';
+mail($to, 'Formulaire de contact retour', $message, $headers);
+header("Location: /?p=lastMessage");
+
+
+
+
+

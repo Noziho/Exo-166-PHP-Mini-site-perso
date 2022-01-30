@@ -20,7 +20,7 @@ if (isset($_GET['f'])) {
     <h1 class="anime">Contact</h1>
 <div class="container">
     <div class="basicContainer">
-        <form action="/?p=/form/formTreatment" method="post">
+        <form action="/?p=/form/formTreatment" method="post" enctype="multipart/form-data">
             <div>
                 <label for="id-username">Pseudo: </label>
                 <input type="text" id="id-username" name="username" minlength="5" maxlength="25" required>
@@ -34,6 +34,11 @@ if (isset($_GET['f'])) {
             <div>
                 <label for="id-message">Votre Message: </label>
                 <textarea name="user_message" id="id-message"  cols="30" rows="10" minlength="25" maxlength="255" required></textarea>
+            </div>
+
+            <div>
+                <label for="id-file">Votre fichier (optionnel): </label>
+                <input type="file" name="user_file" id="id-file">&nbsp;(Max 2 MO.)
             </div>
 
             <div>
