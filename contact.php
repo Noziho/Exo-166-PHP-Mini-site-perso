@@ -7,6 +7,9 @@ $messages = [
     "Error: La longueur de l'adresse mail doit-être comprise entre 7 et 120 caractères.",
     "Error: La longueur du message doit-être comprise entre 25 et 255 caractères",
     "Error: L'adresse mail doit contenir un format de type mail@exemple.com",
+    "Error: Le fichier est trop volumineux",
+    "Error: Le fichier n'est pas au bon format",
+    "Error: Une erreur est survenue avec l'upload du fichier",
     "Success: Le formulaire à bien été envoyer.",
 ];
 if (isset($_GET['f'])) {
@@ -38,7 +41,7 @@ if (isset($_GET['f'])) {
 
             <div>
                 <label for="id-file">Votre fichier (optionnel): </label>
-                <input type="file" name="user_file" id="id-file">&nbsp;(Max 2 MO.)
+                <input type="file" name="userFile" id="id-file" accept=".jpg, .jpeg, .png">&nbsp;(Max 2 MO.)
             </div>
 
             <div>
