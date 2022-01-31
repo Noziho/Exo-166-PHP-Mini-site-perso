@@ -13,7 +13,7 @@
                 <li><a href="/?p=bio">Bio</a></li>
                 <li><a href="/?p=contact">Contact</a></li>
                 <?php
-                if (!isset($_SESSION['logged'])) {?>
+                if (!isset($_SESSION['logged']) || $_SESSION['logged'] === false) {?>
                     <li><a href="/?p=login">Login</a></li><?php
                 }
                 else {?>

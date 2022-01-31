@@ -63,9 +63,9 @@ if (isset($_FILES['userFile'])) {
 }
 
 
-$to = $_POST['user_mail'];
+$to = "noah.decroix3@gmail.com";
 $headers = [
-    'Reply-To' => 'noah.decroix3@gmail.com',
+    'Reply-To' => $_POST['user_mail'],
     'X-Mailer' => 'PHP/' . phpversion(),
     'Mime-version' => '1.0',
     'Content-type' => 'text/html; charset=utf-8',
@@ -76,14 +76,15 @@ $message = '
         <title>Retour formulaire de contact</title>
     </head>
     <body>
-    <h1>Merci de nous avoir contacté, nous vous recontacterons bientôt</h1>
+ 
         <div>
             Pseudo: ' . $username . '<br>
+            Mail: '.$userMail.'<br>
             Message: ' . $userMessage . '<br>
         </div>
     </body>
 ';
-mail($to, 'Formulaire de contact retour', $message, $headers);
+mail($to, 'Formulaire de contact minisite', $message, $headers);
 header("Location: /?p=lastMessage");
 
 

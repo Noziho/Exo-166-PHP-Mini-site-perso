@@ -1,9 +1,7 @@
 <?php
 $title = "Connexion";
 require __DIR__ .'./parts/header.php';
-if (isset($_SESSION['logged']) === true) {
-    header("Location: /?p=home");
-}
+
     $errorMessage = [
         "Error: Le mot de passe ou l'identifiant est incorrect",
     ];

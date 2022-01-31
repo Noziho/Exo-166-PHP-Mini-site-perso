@@ -8,14 +8,16 @@ if ($_SESSION['logged'] !== true) {
     <h1 class="anime">Page admin</h1>
 
     <div class="container">
-        <div class="basicContainer">
+        <div class="basicContainer sessAdminContent">
             <h2>Gestion</h2>
             <?php
-            $file = fopen("../data/messagesHistory.txt", "r+");
-            while ($line = stream_get_line($file, 0)) {?>
-                <p class="messagesHistory"><?= $line."\n" ?></p><?php
+            $file = file_get_contents("../data/messagesHistory.txt");
+            $tabFile = explode("\n",$file);
+            foreach ($tabFile as $value) {?>
+
+                <p class="messagesHistory"><?= $value ?></p>
+                <hr><?php
             }
-            fclose($file);
             ?>
 
 
