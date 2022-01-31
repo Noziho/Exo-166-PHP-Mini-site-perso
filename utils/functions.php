@@ -1,7 +1,7 @@
 <?php
 
-function getUserData () :void {
-    $json = file_get_contents('../data/user.json');
+function getUserData (string $file) :void {
+    $json = file_get_contents($file);
     $dataArray = json_decode($json, true);
     foreach ($dataArray as $key => $data) {
         if (is_array($data)) {

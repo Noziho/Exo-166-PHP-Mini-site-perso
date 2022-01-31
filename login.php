@@ -1,5 +1,9 @@
 <?php
+$title = "Connexion";
 require __DIR__ .'./parts/header.php';
+if (isset($_SESSION['logged']) === true) {
+    header("Location: /?p=home");
+}
     $errorMessage = [
         "Error: Le mot de passe ou l'identifiant est incorrect",
     ];
@@ -10,7 +14,7 @@ require __DIR__ .'./parts/header.php';
 <?php
 
 }?>
-    <div class="container">
+    <div class="containerLogin">
         <div class="basicContainer">
             <form action="/?p=/form/formLoginTreatment" method="post">
                 <div>
@@ -24,7 +28,7 @@ require __DIR__ .'./parts/header.php';
                 </div>
 
                 <div>
-                    <input class="sendButton" type="submit">
+                    <input class="sendButton" type="submit" value="Connexion">
                 </div>
 
             </form>

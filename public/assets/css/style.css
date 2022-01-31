@@ -103,6 +103,10 @@ footer {
 	overflow-wrap: break-word;
 }
 
+.messagesHistory {
+	overflow-wrap: break-word
+}
+
 .autoWidth {
 	width: auto;
 }
@@ -124,6 +128,12 @@ footer {
 
 .error {
 	background: indianred;
+}
+
+.containerLogin {
+	display: flex;
+	justify-content: center;
+	margin-top: 10%;
 }
 
 @media screen and (max-width: 800px) {

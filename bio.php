@@ -6,7 +6,7 @@ require 'parts/header.php';?>
 <div class="container">
 
     <div class="basicContainer">
-        <h2>Informations: </h2><?= getUserData() ?>
+        <h2>Informations: </h2><?= getUserData('../data/user.json') ?>
     </div>
 
 </div>
