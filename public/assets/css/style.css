@@ -132,6 +132,9 @@ footer {
 hr {
 	color: #8b4e10;
 }
+#show {
+	display: block;
+}
 
 .success {
 	background: mediumseagreen;

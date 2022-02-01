@@ -1,6 +1,6 @@
 <?php
 $title = "Connexion";
-require __DIR__ .'./parts/header.php';
+require 'parts/header.php';
 
     $errorMessage = [
         "Error: Le mot de passe ou l'identifiant est incorrect",
@@ -14,7 +14,7 @@ require __DIR__ .'./parts/header.php';
 }?>
     <div class="containerLogin">
         <div class="basicContainer">
-            <form action="/?p=/form/formLoginTreatment" method="post">
+            <form action="/?p=form/formLoginTreatment" method="post">
                 <div>
                     <label for="id-login">Login: </label>
                     <input type="text" id="id-login" name="user_login" minlength="5" maxlength="25" required>
@@ -34,23 +34,5 @@ require __DIR__ .'./parts/header.php';
     </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php
-require __DIR__ .'./parts/footer.php';
+require 'parts/footer.php';

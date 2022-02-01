@@ -23,7 +23,7 @@ if (isset($_GET['f'])) {
     <h1 class="anime">Contact</h1>
 <div class="container">
     <div class="basicContainer">
-        <form action="/?p=/form/formTreatment" method="post" enctype="multipart/form-data">
+        <form action="/?p=form/formTreatment" method="post" enctype="multipart/form-data">
             <div>
                 <label for="id-username">Pseudo: </label>
                 <input type="text" id="id-username" name="username" minlength="5" maxlength="25" required>
