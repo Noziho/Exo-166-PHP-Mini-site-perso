@@ -1,6 +1,6 @@
 <?php
 $title = "Espace admin";
-require __DIR__ . './parts/header.php';
+require 'parts/header.php';
 if ($_SESSION['logged'] !== true) {
     header("Location: /?p=home");
 } ?>
@@ -26,4 +26,4 @@ if ($_SESSION['logged'] !== true) {
 
 
 <?php
-require __DIR__ . './parts/footer.php';
+require 'parts/footer.php';
