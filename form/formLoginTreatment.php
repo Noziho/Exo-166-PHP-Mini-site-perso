@@ -6,8 +6,8 @@ if (!dataIsset('user_login', 'user_password')){
     header("Location: /?p=login&e=0");
 }
 
-$login = getSecuredStringData('user_login');
-$password = getSecuredStringData('user_password');
+$login = filter_var($_POST['user_login'],FILTER_SANITIZE_STRING);
+$password = $_POST['user_password'];
 
 if ($login !== $username || $password !== $passwd ) {
     $_SESSION['logged'] = false;

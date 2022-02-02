@@ -1,21 +1,21 @@
 <?php
-require '../utils/functions.php';
+require './../utils/functions.php';
 
 if (!dataIsset('username', 'user_mail', 'user_message')) {
     header("Location: /?p=contact&f=0");
     exit();
 }
 
-$username = getSecuredStringData('username');
-$userMail = getSecuredStringData('user_mail');
-$userMessage = getSecuredStringData('user_message');
+$username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+$userMail = filter_var($_POST['user_mail'], FILTER_SANITIZE_EMAIL);
+$userMessage = filter_var($_POST['user_message'], FILTER_SANITIZE_STRING);
 
 $userMail = filter_var($userMail, FILTER_VALIDATE_EMAIL);
 
 
-checkRange('username', 5, 25, '/?p=contact&f=1');
-checkRange('user_mail', 7, 120, '/?p=contact&f=2');
-checkRange('user_message', 25, 255, '/?p=contact&f=3');
+checkRange($username, 5, 25, '/?p=contact&f=1');
+checkRange($userMail, 7, 120, '/?p=contact&f=2');
+checkRange($userMessage, 25, 255, '/?p=contact&f=3');
 if (!$userMail) {
     header("Location: /?p=contact&f=4");
     exit();

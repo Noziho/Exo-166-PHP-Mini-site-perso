@@ -18,7 +18,9 @@ if (isset($_GET['f'])) {
         <div class="error-message <?= strpos($message, "Error: ") === 0 ? 'error' : 'success' ?>"><?= $message ?></div>
         <?php
 
-}?>
+}
+
+?>
 
     <h1 class="anime">Contact</h1>
 <div class="container">
