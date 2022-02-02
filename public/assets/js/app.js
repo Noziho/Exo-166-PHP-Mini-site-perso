@@ -24,7 +24,7 @@ checkRange(25, 255, user_message, "La longueur du message doit-être comprise en
 if (errorOrSucessMessage) {
     setTimeout(function () {
         $('.error-message').slideUp('fast');
-    },4000);
+    },1000);
 }
 
 setTimeout(function () {

@@ -1,15 +1,20 @@
 <?php
 $title = 'Accueil';
+if (isset($_GET ['disL'])) {
+    $_SESSION = [];
+    $params = session_get_cookie_params();
+    setcookie(session_name(), '', time() - 42000, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
+    session_destroy();
+    ?>
+    <div class="error-message error">Vous avez été déconnecté.</div><?php
+}
 require 'parts/header.php';
 require 'id.php';
 if (isset($_GET['login'])) { ?>
         <div class="error-message success">Bienvenue <?= $username ?></div><?php
 }
-if (isset($_GET ['disL'])) {
-    session_destroy();
-    ?>
-    <div class="error-message error">Vous avez été déconnecté.</div><?php
-}
+
+
 
 
 ?>

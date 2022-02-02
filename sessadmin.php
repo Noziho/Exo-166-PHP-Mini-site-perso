@@ -11,11 +11,21 @@ if ($_SESSION['logged'] !== true) {
         <div class="basicContainer sessAdminContent">
             <h2>Gestion</h2>
             <?php
-            $file = file_get_contents("../data/messagesHistory.txt");
-            $tabFile = explode("\n",$file);
-            foreach ($tabFile as $value) {?>
+            $messagesHistoryJson = file_get_contents('../data/messagesHistory.json');
+            $messagesHistory = json_decode($messagesHistoryJson, true);
+            $messagesHistory = array_reverse($messagesHistory);
 
-                <p class="messagesHistory"><?= $value ?></p>
+            if (isset($_GET['cm'], $_POST['delete'])) {
+                unset($messagesHistory[(int)$_GET['cm']]);
+                $messagesHistoryJsonModif = json_encode($messagesHistory);
+                file_put_contents('../data/messagesHistory.json', $messagesHistoryJsonModif);
+            }
+            foreach ($messagesHistory as $key => $message) {?>
+                <p class="messagesHistory">Pseudo: <?= $message['name'] ?></p>
+                <p class="messagesHistory">Message: <?= $message['message'] ?></p>
+                <form action="/?p=sessadmin&cm=<?= $key ?> " method="post">
+                    <input class="sendButton" type="submit" name="delete" value="Delete">
+                </form>
                 <hr><?php
             }
             ?>

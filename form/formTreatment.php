@@ -21,11 +21,12 @@ if (!$userMail) {
     exit();
 }
 
+$messagesHistoryJson = file_get_contents('../data/messagesHistory.json');
+$messagesHistory = json_decode($messagesHistoryJson, true);
+$messagesHistory[] = ['name' => $username, 'message' => $userMessage];
+$messagesHistoryJsonModif = json_encode($messagesHistory);
+file_put_contents('../data/messagesHistory.json', $messagesHistoryJsonModif);
 
-$jsonMessage = file_put_contents("../data/last_message.json", $_POST['user_message']);
-json_encode($jsonMessage);
-
-$messagesHistory = file_put_contents("../data/messagesHistory.txt", "\n"."\n".$_POST['user_message'], FILE_APPEND);
 
 
 if (isset($_FILES['userFile'])) {

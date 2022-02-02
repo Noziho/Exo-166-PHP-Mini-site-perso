@@ -13,12 +13,13 @@
                 <li><a href="/?p=bio">Bio</a></li>
                 <li><a href="/?p=contact">Contact</a></li>
                 <?php
-                if (!isset($_SESSION['logged']) || $_SESSION['logged'] === false) {?>
-                    <li><a href="/?p=login">Login</a></li><?php
+                if (isset($_SESSION['logged'])) {?>
+                    <li><a href="/?p=sessadmin">Gestion</a></li>
+                    <li><a href="/?p=home&disL=1">Disconnect</a>
+                    <?php
                 }
                 else {?>
-                <li><a href="/?p=sessadmin">Gestion</a></li>
-                <li><a href="/?p=home&disL=1">Disconnect</a>
+                    <li><a href="/?p=login">Login</a></li>
                     <?php
                 }
 
