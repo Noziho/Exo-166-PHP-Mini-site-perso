@@ -43,7 +43,7 @@ if (isset($_GET['f'])) {
 
             <div>
                 <label for="id-file">Votre fichier (optionnel): </label>
-                <input type="file" name="userFile" id="id-file" accept=".jpg, .jpeg, .png">&nbsp;(Max 2 MO.)
+                <input type="file" name="userFile" id="id-file" accept=".jpg, .jpeg, .png">&nbsp;(Max 2 MO. format accepter: .jpg, .jpeg, .png)
             </div>
 
             <div>
